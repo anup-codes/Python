@@ -1,3 +1,12 @@
+# Problem 1: Write a program that will give you in hand monthly salary after deduction on CTC - HRA(10%), DA(5%), PF(3%) and taxes deduction as below:
+# Salary(Lakhs) : Tax(%)
+
+# Below 5 : 0%
+# 5-10 : 10%
+# 10-20 : 20%
+# aboove 20 : 30%
+
+
 salary_lakhs = float(input("Enter your annual salary (in Lakhs): "))
 
 salary = salary_lakhs * 100000
@@ -38,3 +47,17 @@ print(f"{'='*40}")
 print(f"  In-hand Annual Salary : ₹{in_hand_annual:>12,.2f}")
 print(f"  In-hand Monthly Salary: ₹{monthly_salary:>12,.2f}")
 print(f"{'='*40}\n")
+
+
+# Problem 2: Write a program that take a user input of three angles and will find out whether it can form a triangle or not.
+
+
+a = int(input("enter 1st angle of the trinangle: "))
+b = int(input("enter 2nd angle of the triangle: "))
+c = int(input("enter 3rd angle of the triangle: "))
+
+sum = a+b+c
+if sum == 180 :
+    print(" it can form a triangle")
+else :
+    print("canot form the triangle")
