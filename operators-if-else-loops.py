@@ -61,3 +61,19 @@ if sum == 180 :
     print(" it can form a triangle")
 else :
     print("canot form the triangle")
+
+
+
+# Problem 3: Write a program that will take user input of cost price and selling price and determines whether its a loss or a profit.
+
+cost = int(input("enter the cost price "))
+sell = int(input("enter the selling price "))
+
+diff = sell - cost
+if diff<1 :
+    print ("you are in lose")
+else :
+    print("you are in profit")
+    
+
+ 
