@@ -76,4 +76,33 @@ else :
     print("you are in profit")
     
 
- 
+# Problem 4: Write a menu-driven program -
+# 1. cm to ft
+# 2.km to miles
+# 3.USD to INR
+# 4.exit
+
+print("choose action to perform")
+print("1.cm to ft" )
+print("2. km to miles" )
+print("3. USD to INR" )
+print("4.exit")
+choice = int(input("enter your choice: "))
+if choice==1:
+  cm = int(input("enter cm to convert"))
+  feet = cm/30.48
+  print(cm,"cm in feet =",feet)
+
+elif choice == 2:
+  km = int(input("enter km to convert"))
+  miles = km*0.621371
+  print(km,"in miles =",miles)
+elif choice == 3:
+  USD = int(input("enter USD to convert in INR"))
+  INR = USD*94.99
+  print(USD,"in INR =",INR)
+elif choice == 4:
+  exit()
+
+else:
+  print("wrong input")
