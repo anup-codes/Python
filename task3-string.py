@@ -182,3 +182,135 @@ n=len(str)
 
 for i in  str.split():
   print(i[0].upper(),end="")
+
+
+
+# Problem 12: Append second string in the middle of first string
+# Input:
+
+# campusx
+# data
+# Output:
+
+# camdatapusx
+
+fst = "campusx"
+snd = "data"
+
+add =""
+
+print(fst[0:len(fst)//2] + snd + fst[len(fst)//2::])
+
+
+
+# Problem 13:Given string contains a combination of the lower and upper case letters. Write a program to arrange the characters of a string so that all lowercase letters should come first.
+# Given:
+
+# str1 = PyNaTive
+
+# Expected Output:
+
+# yaivePNT
+
+str1 = "PyNaTive"
+
+lower = ""
+up=""
+for i in str1:
+  if i>="a" and i<="z":
+   lower = lower + i
+  
+ 
+
+  else:
+    up = up+i
+
+
+print(lower + up)
+
+
+
+# Problem 14:Take a alphanumeric string input and print the sum and average of the digits that appear in the string, ignoring all other characters.
+# Input:
+
+# hel123O4every093
+
+# Output:
+
+# Sum: 22
+# Avg: 2.75
+
+str1 = "hel123O4every093"
+
+sum = 0
+count=0
+
+for i in str1:
+  if i.isdigit() :
+    sum = sum+int(i)
+    count += 1
+
+print(sum)
+print(sum/count)
+
+
+
+# Problem 16: Check whether the string is Symmetrical.
+# Statement: Given a string. the task is to check if the string is symmetrical or not. A string is said to be symmetrical if both the halves of the string are the same.
+
+# Example 1:
+
+# Input
+
+# khokho
+# Output
+
+# The entered string is symmetrical
+
+s = "madma"
+
+if len(s)%2 ==0 :
+  for i in s:
+    s1 = s[0:len(s)//2]
+    s2 = s[len(s)//2::]
+
+else:
+   s1 = s[0:len(s)//2]
+   s2 = s[len(s)//2+1::]
+  
+if s1 == s2:
+  print("this is symmetrical")
+else:
+  print("not stmmetrical")
+
+
+
+# Problem 17: Reverse words in a given String
+# Statement: We are given a string and we need to reverse words of a given string.
+
+# Example 1:
+
+# Input:
+
+# geeks quiz practice code
+# Output:
+
+# code practice quiz geeks
+# Example 2:
+
+# Input:
+
+# my name is laxmi
+# Output:
+
+# laxmi is name my
+
+s = "my name is Anup"
+
+rev = " "
+
+for i in  s.split():
+  rev = i +" " +rev
+
+print(rev)
+ 
