@@ -167,3 +167,66 @@ for i in L:
   result.extend(i.split(inp))
 
 print(result)
+
+
+
+# Problem 9: Convert Character Matrix to single String using string comprehension.
+# Example 1:
+
+# Input:
+
+# [['c', 'a', 'm', 'p', 'u', 'x'], ['i', 's'], ['b', 'e', 's', 't'], ['c', 'h', 'a', 'n', 'n', 'e', 'l']]
+# Output:
+
+# campux is best channel
+L = [['c', 'a', 'm', 'p', 'u', 'x'], ['i', 's'], ['b', 'e', 's', 't'], ['c', 'h', 'a', 'n', 'n', 'e', 'l']]
+
+print(" ".join(["".join(i) for i in L]))
+
+
+# Problem 11: Write a program that can perform union operation on 2 lists
+# Example:
+
+# Input:
+
+# [1,2,3,4,5,1]
+# [2,3,5,7,8]
+# Output:
+
+# [1,2,3,4,5,7,8]
+
+
+L1 = [1,2,3,4,5,1]
+L2 = [2,3,5,7,8]
+
+union =[]
+
+for i in L1:
+  if i not in union:
+    union.append(i)
+
+for j in L2:
+  if j not in union:
+    union.append(j)
+
+print(union)
+
+
+# Problem 12: Write a program that can find the max number of each row of a matrix
+# Example:
+
+# Input:
+
+# [[1,2,3],[4,5,6],[7,8,9]]
+# Output:
+
+# [3,6,9]
+
+L1 = [[1,2,3],[4,5,6],[7,8,9]]
+
+result =[]
+
+for i in L1:
+  result.append(max(i))
+  
+print(result)
