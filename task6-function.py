@@ -69,3 +69,68 @@ def char_Case_Counter (str):
 
 s = 'CampusX is an Online Mentorship Program fOr EnginEering students.'
 char_Case_Counter(s)
+
+
+
+# Problem 5: Write a Python function to check whether a number is perfect or not.
+# A Perfect number is a number that is half the sum of all of its positive divisors (including itself).
+
+# Example :
+
+# The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. 
+# Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. 
+
+# The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+
+
+def is_Perfect(num):
+  divisor =[]
+  for i in range (1,num):
+    if num % i ==0 :
+      divisor.append(i)
+
+  total = sum(divisor)
+  grand_total = total + num
+ 
+  if total == num and grand_total // 2 == num:
+    print("it is a perfect number")
+
+  else :
+    print("it is not a perfect number")
+  
+
+
+is_Perfect(8128)
+
+
+
+
+
+# Problem-7 Write a python function that accepts a string as input and returns the word with most occurence.
+
+# Input:
+# hello how are you i am fine thank you
+# Output
+# you -> 2
+
+
+def most_used(s):
+  d ={}
+
+  for i in s.split():
+    if i in d:
+      d[i] = d[i] + 1
+    else :
+      d[i] = 1
+
+  max_val = max(d.values())
+
+  for i in d :
+    if d[i] == max_val:
+      print(i,'-->',d[i])
+      break
+    
+
+
+
+most_used('hello how are you i am fine thank you ')
