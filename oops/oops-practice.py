@@ -34,14 +34,20 @@ class Line :
   def __str__(self):
     return '{}x + {}y + {} = 0'.format(self.A,self.B,self.C)
 
-  def point_on_line(line,point):
-    if line.A*point.x_cod + line.B*point.y_cod + line.C == 0 :
+  def point_on_line(self,point):
+    self.d  = self.A*point.x_cod + self.B*point.y_cod + self.C
+    print(self.d)
+    if self.d == 0 :
       return "point lies on the line"
+      
     else:
       return "point not lies on the line"
+    
 
-
-
+  def point_line_distance(self,point):
+    
+    dis = abs(self.d)/((self.A)**2+ (self.B)**2)**0.5
+    return dis
 
 
 # p1 = point(1,1)
@@ -53,3 +59,4 @@ class Line :
 l1 = Line(2,2,4)
 p3 = point(-1,1)
 print(l1.point_on_line(p3))
+print(l1.point_line_distance(p3))
