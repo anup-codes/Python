@@ -49,6 +49,26 @@ class Line :
     dis = abs(self.d)/((self.A)**2+ (self.B)**2)**0.5
     return dis
 
+  def intersection_of_line (self,other):
+    m1 = -self.A/self.B
+    m2 = -other.A/other.B
+
+
+    if m1 == m2:
+      if self.A*other.B == other.A*self.B and self.A*other.C == other.A*self.C :
+        return 'intersect at many point(coinside each other)'
+      else:
+        return 'parallel to each other '
+
+    elif m1 != m2 :
+      return 'this lines are intersecting'
+    
+    else:
+      pass
+    
+
+
+  
 
 # p1 = point(1,1)
 # p2 = point(1,0)
@@ -56,7 +76,19 @@ class Line :
 # print(p1.origin_distance())
 
 
-l1 = Line(2,2,4)
-p3 = point(-1,1)
-print(l1.point_on_line(p3))
-print(l1.point_line_distance(p3))
+
+# p3 = point(-1,1)
+# print(l1.point_on_line(p3))
+# print(l1.point_line_distance(p3))
+
+l1 = Line(1,1,-4)
+l2 = Line(1,-1,-2)
+print(l1.intersection_of_line(l2))
+
+l3 = Line(1,1,-2)
+l4 = Line(2,2,-5)
+print(l3.intersection_of_line(l4))
+
+l5 = Line(1,1,-2)
+l6 = Line(2,2,-4)
+print(l5.intersection_of_line(l6))
