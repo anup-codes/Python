@@ -220,3 +220,136 @@ stu1.set_age(21)
 stu1.set_sid(101)
 
 print(stu1.check_qualification())
+
+
+
+'''
+Q-6: Ice-Cream Scoops and Bowl shop
+Create a class Scoop which has one public property flavor and one private proptery price. Take flavor values during object creation.
+
+Create a class Bowl with private prperty scoop_list which will have list of scoopd object.
+
+Create a method add_scoops in Bowl class which will add any no of Scoop objects given as parameter and store it in scoops_list.
+
+Make getter and setter method for price property.
+
+Make a method display to display flavour and price of each Scoop in scoop_list and print total price of the bowl by adding all flavour scoops prices.
+
+Make a method sold in both Scoop class and Bowl class to print no of quantity sold.
+
+Ex.-
+
+choco = Scoop('chocolate')
+print(choco)
+choco.set_price(100)
+
+berry = Scoop('berry')
+berry.set_price(120)
+print(berry)
+
+vanilla = Scoop('vanilla')
+vanilla.set_price(150)
+
+bowl = Bowl()
+
+bowl.add_scoops(choco) # Giving one parameter
+bowl.add_scoops(berry, vanilla) # Multiple
+# add_scoops should handle both scenerios
+
+print(bowl)
+
+bowl.display()
+
+Scoop.sold()
+Bowl.sold()
+
+Output
+
+Flavor - chocolate Price - None
+Flavor - berry Price - 120
+chocolate
+berry
+vanilla
+Dsiplaying Bowl
+Flavor - chocolate Price - 100
+Flavor - berry Price - 120
+Flavor - vanilla Price - 150
+Price of Bowl - 370
+3 scoops sold
+1 bowls sold
+
+'''
+
+class Scoop :
+
+  __counter = 0
+
+
+  def __init__(self,flavor):
+    self.flavor = flavor
+    self.__price = None
+    Scoop.__counter +=1
+
+  def set_price(self,price):
+    self.__price = price
+
+  def get__price(self):
+    return self.__price
+  
+  def __str__(self):
+    return "flavor - {} and price - {}".format(self.flavor,self.__price)
+  
+  @staticmethod
+  def sold():
+    return Scoop.__counter
+
+
+class Bowl:
+
+  __counter = 0
+
+  def __init__(self):
+    self.__scoop_list = []
+
+  def add_scoops (self,*new_scoops):
+    for sccop in new_scoops:
+      self.__scoop_list.append(sccop)
+
+  def display(self):
+    total = 0
+    for scoop in self.__scoop_list:
+      print(scoop)
+      total = total + scoop.get__price()
+
+    print('total price',total)
+
+  @staticmethod
+  def sold():
+    return Bowl.__counter
+
+
+choco = Scoop('chocolate')
+print(choco)
+choco.set_price(100)
+
+berry = Scoop('berry')
+berry.set_price(120)
+print(berry)
+
+vanilla = Scoop('vanilla')
+vanilla.set_price(150)
+
+bowl = Bowl()
+
+bowl.add_scoops(choco) # Giving one parameter
+bowl.add_scoops(berry, vanilla) # Multiple
+# add_scoops should handle both scenerios
+
+print(bowl)
+
+bowl.display()
+
+Scoop.sold()
+Bowl.sold()
+
+
